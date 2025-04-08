@@ -9,6 +9,7 @@
 # Production
 /build
 /dist
+!/dist/videos/background-new.mov
 
 # Environment files
 .env

@@ -15,13 +15,14 @@
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap">
-        <header class="site-header">
+        <header class="site-header" style="position: absolute; top: 0; left: 0; width: 100%; z-index: 2; background: transparent;">
             <div class="container">
                 <div class="site-header-inner">
                     <div class="brand header-brand">
-                        <h1 class="m-0">
-							<a href="#">
+                        <h1 class="m-0" style="display: flex; align-items: center;">
+							<a href="#" style="display: flex; align-items: center; text-decoration: none;">
 								<img class="header-logo-image" src="dist/images/logo.png" alt="Logo" width="48" height="48" style="object-fit: contain;">
+                                <span style="color: white; font-size: 24px; margin-left: 12px; font-weight: 600;">CentaurOps</span>
                             </a>
                         </h1>
                     </div>
@@ -30,16 +31,37 @@
         </header>
 
         <main>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-inner">
+            <section class="hero" style="position: relative; overflow: hidden; min-height: 100vh;">
+                <!-- Video background -->
+                <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                    <video 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline 
+                        id="heroVideo"
+                        style="position: absolute; 
+                               width: auto;
+                               height: 100%;
+                               object-fit: cover;
+                               object-position: center center;"
+                        preload="auto"
+                    >
+                        <source src="dist/videos/background-new.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- Overlay -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+                </div>
+
+                <div class="container" style="position: relative; z-index: 1; height: 100vh; display: flex; align-items: center;">
+                    <div class="hero-inner" style="width: 100%; padding: 48px 0;">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Agentic AI For Government and Enterprise Operations</h1>
-	                        <p class="hero-paragraph">Gather knowledge, create insights, and automatically execute tasks with AI</p>
-	                        <div class="hero-cta"><a class="button button-primary" href="mailto:ekkirinaldi@gmail.com">Contact us</a></div>
+	                        <h1 class="hero-title mt-0" style="color: white; font-size: 48px; margin-bottom: 24px;">AI Agent For Command Center Operations</h1>
+	                        <p class="hero-paragraph" style="color: white; font-size: 20px; margin-bottom: 32px;">Compile knowledge, create insights, and dispatch automatically using AI</p>
+	                        <div class="hero-cta"><a class="button button-primary" href="mailto:ekki@centaurops?subject=Request%20for%20Demo&body=Dear%20CentaurOps%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20AI-powered%20command%20center%20solutions.%20Please%20provide%20me%20with%20more%20information%20about%3A%0A%0A1.%20Product%20capabilities%20and%20features%0A2.%20Integration%20options%0A3.%20Pricing%20structure%0A4.%20Available%20deployment%20models%0A%0ACompany%20Name%3A%0AIndustry%3A%0AUse%20Case%3A%0A%0ALooking%20forward%20to%20your%20response.%0A%0ABest%20regards%2C" style="font-size: 18px; padding: 16px 32px;">Contact us</a></div>
 						</div>
-						<div >
-							<img src="dist/images/command-center-update.png" alt="Nusantara Command Center Interface" width="800" >
+						<div style="margin-top: 48px;">
 						</div>
                     </div>
                 </div>
@@ -103,6 +125,26 @@
                                     <p class="text-sm mb-0">Slack, WhatsApp, Telegram, Discord, and more. Centa can be accessed from anywhere, anytime, on any device.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-demo section" style="background-color: #242830; padding: 96px 0;">
+                <div class="container">
+                    <div class="video-demo-inner section-inner">
+                        <div class="video-demo-header text-center">
+                            <h2 class="section-title mt-0" style="color: white; font-size: 32px; margin-bottom: 16px;">See CentaurOps in Action</h2>
+                            <p class="section-paragraph mb-0" style="color: #9BA9B4; margin-bottom: 48px;">Watch how our AI-powered command center transforms operations</p>
+                        </div>
+                        <div class="video-container" style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                            <iframe 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                                title="CentaurOps Demo"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -206,5 +248,22 @@
     </div>
 
     <script src="dist/js/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            
+            // Force play on load
+            video.play().catch(function(error) {
+                console.log("Video play failed:", error);
+            });
+
+            // Try to play video when user interacts with the page
+            document.addEventListener('click', function() {
+                video.play().catch(function(error) {
+                    console.log("Video play failed:", error);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
