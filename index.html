@@ -61,7 +61,7 @@
         <main>
             <section class="hero" style="position: relative; overflow: hidden; min-height: 100vh;">
                 <!-- Video background -->
-                <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <div class="video-background" style="position: absolute; top: 0; right: 0; width: 100%; height: 100%; z-index: 0;">
                     <video 
                         autoplay 
                         muted 
@@ -69,10 +69,11 @@
                         playsinline 
                         id="heroVideo"
                         style="position: absolute; 
+                               right: 0;
                                width: auto;
                                height: 100%;
                                object-fit: cover;
-                               object-position: center center;"
+                               object-position: right center;"
                         preload="auto"
                     >
                         <source src="https://centaurops.s3.ap-southeast-2.amazonaws.com/background-new.mov" type="video/mp4">
