@@ -10,8 +10,6 @@
 /build
 /dist
 !/dist/videos/background-new.mov
-!/dist/images/cc-*.png
-!/dist/images/cc-*.jpeg
 
 # Environment files
 .env
