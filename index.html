@@ -46,6 +46,43 @@
             display: block;
             margin: 0 auto;
         }
+        
+        /* Use Case Dropdown Styles */
+        .use-case-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+        }
+        
+        .use-case-header {
+            padding: 20px !important;
+        }
+        
+        .use-case-content {
+            padding: 0 20px 20px !important;
+        }
+        
+        .industry-title {
+            font-size: 24px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .use-case-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            
+            .use-case-header {
+                padding: 20px !important;
+            }
+            
+            .use-case-content {
+                padding: 0 20px 20px !important;
+            }
+            
+            .industry-title {
+                font-size: 24px !important;
+            }
+        }
     </style>
 </head>
 <body class="is-boxed has-animations">
@@ -186,111 +223,159 @@
                 </div>
             </section>
 
-            <section class="founders-experience section" style="background-color: #242830;">
+
+        </main>
+
+            <section class="use-cases section" style="background-color: #1c1f23; padding: 96px 0;">
                 <div class="container">
-                    <div class="founders-experience-inner section-inner">
-                        <div class="founders-experience-header text-center">
-                            <h2 class="section-title mt-0" style="font-size: 32px; margin-bottom: 16px;">Founder's Experience</h2>
-                            <p class="section-paragraph mb-0" >Building Command Centers Across Indonesia</p>
+                    <div class="use-cases-inner section-inner">
+                        <div class="use-cases-header text-center">
+                            <h2 class="section-title mt-0" style="color: white; font-size: 32px; margin-bottom: 16px;">Use Cases</h2>
+                            <p class="section-paragraph mb-0" style="color: #9BA9B4; margin-bottom: 64px;">Discover how CentaurOps transforms operations across different industries</p>
                         </div>
 
-                        <!-- Experience Row 1 -->
-                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
-                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
-                                <img src="dist/images/cc-bandung.png" alt="Bandung Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                                <img src="dist/images/cc-bandung1.png" alt="Bandung Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                        <!-- Public Sector -->
+                        <div class="industry-section" style="margin-bottom: 64px;">
+                            <h3 class="industry-title" style="color: white; font-size: 28px; margin-bottom: 32px; text-align: center;">Public Sector</h3>
+                            
+                            <div class="use-case-item" style="margin-bottom: 24px; background: #2a2f38; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <button class="use-case-header" onclick="toggleUseCase('emergency-response')" style="width: 100%; padding: 24px; background: none; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                    <h4 style="color: white; margin: 0; font-size: 20px;">Emergency Response Coordination</h4>
+                                    <span class="toggle-icon" id="emergency-response-icon" style="color: white; font-size: 24px; transition: transform 0.3s ease;">+</span>
+                                </button>
+                                <div class="use-case-content" id="emergency-response-content" style="display: none; padding: 0 24px 24px;">
+                                    <div class="use-case-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+                                        <div class="use-case-video">
+                                            <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden;">
+                                                <iframe 
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                                    src="https://centaurops.s3.ap-southeast-2.amazonaws.com/Public+Sector+-+Command+Center.mov"
+                                                    title="Emergency Response Demo"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                        <div class="use-case-description">
+                                            <h5 style="color: white; margin-bottom: 16px;">Intelligent Emergency Management</h5>
+                                            <p style="color: #9BA9B4; line-height: 1.6; margin-bottom: 16px;">Streamline emergency response operations with AI-powered coordination systems. CentaurOps automatically routes emergency calls, dispatches appropriate resources, and provides real-time updates to all stakeholders involved in crisis management.</p>
+                                            <ul style="color: #9BA9B4; line-height: 1.6; padding-left: 20px;">
+                                                <li>Automated call routing and prioritization</li>
+                                                <li>Real-time resource tracking and allocation</li>
+                                                <li>Multi-agency coordination and communication</li>
+                                                <li>Predictive analytics for incident prevention</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-                                <h4 style="color: white; margin-bottom: 16px;">Bandung Command Center</h4>
-                                <p style="color: #9BA9B4; margin: 0;">Led the development of Bandung's Smart City Command Center, implementing AI-driven monitoring systems and emergency response protocols that improved city-wide incident response times by 40%.</p>
+
+                            <div class="use-case-item" style="margin-bottom: 24px; background: #2a2f38; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <button class="use-case-header" onclick="toggleUseCase('smart-city')" style="width: 100%; padding: 24px; background: none; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                    <h4 style="color: white; margin: 0; font-size: 20px;">Smart City Management</h4>
+                                    <span class="toggle-icon" id="smart-city-icon" style="color: white; font-size: 24px; transition: transform 0.3s ease;">+</span>
+                                </button>
+                                <div class="use-case-content" id="smart-city-content" style="display: none; padding: 0 24px 24px;">
+                                    <div class="use-case-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+                                        <div class="use-case-video">
+                                            <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden;">
+                                                <iframe 
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                                    src="https://centaurops.s3.ap-southeast-2.amazonaws.com/Public+Sector+-+Smart+City+Management.mov"
+                                                    title="Smart City Management Demo"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                        <div class="use-case-description">
+                                            <h5 style="color: white; margin-bottom: 16px;">Urban Monitoring & Automation</h5>
+                                            <p style="color: #9BA9B4; line-height: 1.6; margin-bottom: 16px;">CentaurOps enables real-time monitoring of city infrastructure, traffic patterns, and public services. Our AI platform integrates data from IoT sensors, CCTV cameras, and citizen reports to provide actionable insights for urban planning and emergency response.</p>
+                                            <ul style="color: #9BA9B4; line-height: 1.6; padding-left: 20px;">
+                                                <li>Real-time traffic management and optimization</li>
+                                                <li>Automated incident detection and response</li>
+                                                <li>Citizen service request automation</li>
+                                                <li>IoTs monitoring and alerts</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="use-case-item" style="margin-bottom: 24px; background: #2a2f38; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <button class="use-case-header" onclick="toggleUseCase('centralized-knowledge')" style="width: 100%; padding: 24px; background: none; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                    <h4 style="color: white; margin: 0; font-size: 20px;">Centralized Knowledge Management</h4>
+                                    <span class="toggle-icon" id="centralized-knowledge-icon" style="color: white; font-size: 24px; transition: transform 0.3s ease;">+</span>
+                                </button>
+                                <div class="use-case-content" id="centralized-knowledge-content" style="display: none; padding: 0 24px 24px;">
+                                    <div class="use-case-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+                                        <div class="use-case-video">
+                                            <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden;">
+                                                <iframe 
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                                    src="https://centaurops.s3.ap-southeast-2.amazonaws.com/Public+Sector+-+Centralized+Knowledge.mov"
+                                                    title="Centralized Knowledge Demo"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                        <div class="use-case-description">
+                                            <h5 style="color: white; margin-bottom: 16px;">Unified Information Management</h5>
+                                            <p style="color: #9BA9B4; line-height: 1.6; margin-bottom: 16px;">Break down information silos and create a unified knowledge base across all departments and systems. CentaurOps centralizes data from multiple sources, enabling seamless access to critical information and improving decision-making processes.</p>
+                                            <ul style="color: #9BA9B4; line-height: 1.6; padding-left: 20px;">
+                                                <li>Cross-departmental data integration</li>
+                                                <li>Unified search and retrieval systems</li>
+                                                <li>Automated data synchronization</li>
+                                                <li>Secure access control and permissions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Experience Row 2 -->
-                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
-                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
-                                <img src="dist/images/cc-palembang.jpeg" alt="Palembang Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                                <img src="dist/images/cc-palembang1.jpeg" alt="Palembang Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                            </div>
-                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-                                <h4 style="color: white; margin-bottom: 16px;">Palembang Command Center</h4>
-                                <p style="color: #9BA9B4; margin: 0;">Designed and implemented an integrated command center for Palembang city, featuring real-time traffic management and public service monitoring systems.</p>
+                        <!-- Marine -->
+                        <div class="industry-section" style="margin-bottom: 64px;">
+                            <h3 class="industry-title" style="color: white; font-size: 28px; margin-bottom: 32px; text-align: center;">Marine</h3>
+                            
+
+
+                            <div class="use-case-item" style="margin-bottom: 24px; background: #2a2f38; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <button class="use-case-header" onclick="toggleUseCase('maritime-safety')" style="width: 100%; padding: 24px; background: none; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                    <h4 style="color: white; margin: 0; font-size: 20px;">Maritime Safety & Navigation</h4>
+                                    <span class="toggle-icon" id="maritime-safety-icon" style="color: white; font-size: 24px; transition: transform 0.3s ease;">+</span>
+                                </button>
+                                <div class="use-case-content" id="maritime-safety-content" style="display: none; padding: 0 24px 24px;">
+                                    <div class="use-case-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+                                        <div class="use-case-video">
+                                            <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden;">
+                                                <iframe 
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                                    src="https://centaurops.s3.ap-southeast-2.amazonaws.com/Marine+-+Safety+and+Navigation.mov"
+                                                    title="Maritime Safety Demo"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                        <div class="use-case-description">
+                                            <h5 style="color: white; margin-bottom: 16px;">Advanced Maritime Safety Systems</h5>
+                                            <p style="color: #9BA9B4; line-height: 1.6; margin-bottom: 16px;">Enhance maritime safety with AI-powered navigation and monitoring systems. CentaurOps provides real-time vessel tracking, collision avoidance, and emergency response coordination to ensure safe maritime operations.</p>
+                                            <ul style="color: #9BA9B4; line-height: 1.6; padding-left: 20px;">
+                                                <li>Real-time vessel tracking and collision avoidance</li>
+                                                <li>Weather monitoring and route optimization</li>
+                                                <li>Automated emergency response coordination</li>
+                                                <li>Maritime traffic management and regulation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Experience Row 3 -->
-                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
-                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
-                                <img src="dist/images/cc-pmj.png" alt="PMJ Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                                <img src="dist/images/cc-pmj1.png" alt="PMJ Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                            </div>
-                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-                                <h4 style="color: white; margin-bottom: 16px;">Polda Metro Jaya Command Center</h4>
-                                <p style="color: #9BA9B4; margin: 0;">Led the development of Polda Metro Jaya's Command Center, implementing AI-driven monitoring systems and emergency response protocols that improved city-wide incident response times by 40%.</p>
-                            </div>
-                        </div>
-
-                        <!-- Experience Row 4 -->
-                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
-                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
-                                <img src="dist/images/cc-semarang.png" alt="Semarang Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                                <img src="dist/images/cc-semarang1.png" alt="Semarang Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
-                            </div>
-                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-                                <h4 style="color: white; margin-bottom: 16px;">Semarang Command Center</h4>
-                                <p style="color: #9BA9B4; margin: 0;">Contributed to Jakarta Smart City initiative by developing AI-powered analytics systems for urban planning and emergency response coordination.</p>
-                            </div>
-                        </div>
-
-                        <!-- Lightbox Container -->
-                        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                            <img id="lightbox-img" src="" alt="Fullsize Image">
-                        </div>
-
-                        <script>
-                            function openLightbox(imgSrc) {
-                                const lightbox = document.getElementById('lightbox');
-                                const lightboxImg = document.getElementById('lightbox-img');
-                                lightboxImg.src = imgSrc;
-                                lightbox.style.display = 'flex';
-                                document.body.style.overflow = 'hidden';
-                            }
-
-                            function closeLightbox() {
-                                const lightbox = document.getElementById('lightbox');
-                                lightbox.style.display = 'none';
-                                document.body.style.overflow = 'auto';
-                            }
-
-                            // Close lightbox with Escape key
-                            document.addEventListener('keydown', function(e) {
-                                if (e.key === 'Escape') {
-                                    closeLightbox();
-                                }
-                            });
-                        </script>
-
-                        <!-- Responsive Design -->
-                        <style>
-                            @media (max-width: 768px) {
-                                .experience-row {
-                                    flex-direction: column;
-                                }
-                                .experience-images, .experience-content {
-                                    width: 100%;
-                                }
-                                .experience-images {
-                                    padding: 16px 16px 0 16px;
-                                }
-                                .experience-content {
-                                    padding: 16px;
-                                }
-                            }
-                        </style>
                     </div>
                 </div>
             </section>
-        </main>
 
 			<section class="cta section">
 				<div class="container">
@@ -340,6 +425,22 @@
                 });
             });
         });
+        
+        // Use Case Dropdown Function
+        function toggleUseCase(useCaseId) {
+            const content = document.getElementById(useCaseId + '-content');
+            const icon = document.getElementById(useCaseId + '-icon');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                icon.textContent = '−';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.display = 'none';
+                icon.textContent = '+';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 </body>
 </html>
