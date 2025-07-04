@@ -430,15 +430,34 @@
         function toggleUseCase(useCaseId) {
             const content = document.getElementById(useCaseId + '-content');
             const icon = document.getElementById(useCaseId + '-icon');
+            const video = content.querySelector('iframe');
             
             if (content.style.display === 'none' || content.style.display === '') {
                 content.style.display = 'block';
                 icon.textContent = '−';
                 icon.style.transform = 'rotate(0deg)';
+                
+                // Autoplay video when dropdown opens
+                if (video) {
+                    // Add autoplay parameter to video URL
+                    const currentSrc = video.src;
+                    if (!currentSrc.includes('autoplay=1')) {
+                        const separator = currentSrc.includes('?') ? '&' : '?';
+                        video.src = currentSrc + separator + 'autoplay=1&mute=1';
+                    }
+                }
             } else {
                 content.style.display = 'none';
                 icon.textContent = '+';
                 icon.style.transform = 'rotate(0deg)';
+                
+                // Pause video when dropdown closes
+                if (video) {
+                    // Remove autoplay parameter when closing
+                    const currentSrc = video.src;
+                    const cleanSrc = currentSrc.replace(/[?&]autoplay=1/, '').replace(/[?&]mute=1/, '');
+                    video.src = cleanSrc;
+                }
             }
         }
     </script>
