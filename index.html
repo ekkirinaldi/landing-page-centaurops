@@ -414,6 +414,111 @@
                 </div>
             </section>
 
+            <section class="founders-experience section" style="background-color: #242830;">
+                <div class="container">
+                    <div class="founders-experience-inner section-inner">
+                        <div class="founders-experience-header text-center">
+                            <h2 class="section-title mt-0" style="font-size: 32px; margin-bottom: 16px;">Founder's Experience</h2>
+                            <p class="section-paragraph mb-0" > Building Command Centers Across Indonesia</p>
+                        </div>
+
+                        <!-- Experience Row 1 -->
+                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
+                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
+                                <img src="dist/images/cc-bandung.png" alt="Bandung Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                                <img src="dist/images/cc-bandung1.png" alt="Bandung Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                            </div>
+                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                                <h4 style="color: white; margin-bottom: 16px;">Bandung Command Center</h4>
+                                <p style="color: #9BA9B4; margin: 0;">Led the development of Bandung's Smart City Command Center, implementing AI-driven monitoring systems and emergency response protocols that improved city-wide incident response times by 40%.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience Row 2 -->
+                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
+                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
+                                <img src="dist/images/cc-palembang.jpeg" alt="Palembang Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                                <img src="dist/images/cc-palembang1.jpeg" alt="Palembang Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                            </div>
+                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                                <h4 style="color: white; margin-bottom: 16px;">Palembang Command Center</h4>
+                                <p style="color: #9BA9B4; margin: 0;">Designed and implemented an integrated command center for Palembang city, featuring real-time traffic management and public service monitoring systems.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience Row 3 -->
+                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
+                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
+                                <img src="dist/images/cc-pmj.png" alt="PMJ Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                                <img src="dist/images/cc-pmj1.png" alt="PMJ Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                            </div>
+                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                                <h4 style="color: white; margin-bottom: 16px;">Polda Metro Jaya Command Center</h4>
+                                <p style="color: #9BA9B4; margin: 0;">Led the development of Polda Metro Jaya's Command Center, implementing AI-driven monitoring systems and emergency response protocols that improved city-wide incident response times by 40%.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience Row 4 -->
+                        <div class="experience-row" style="display: flex; margin-bottom: 48px; background: #242830; border-radius: 12px; overflow: hidden;">
+                            <div class="experience-images" style="flex: 1; display: flex; gap: 12px; padding: 24px;">
+                                <img src="dist/images/cc-semarang.png" alt="Semarang Command Center 1" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                                <img src="dist/images/cc-semarang1.png" alt="Semarang Command Center 2" style="width: calc(50% - 6px); height: 200px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this.src)">
+                            </div>
+                            <div class="experience-content" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                                <h4 style="color: white; margin-bottom: 16px;">Semarang Command Center</h4>
+                                <p style="color: #9BA9B4; margin: 0;">Contributed to Jakarta Smart City initiative by developing AI-powered analytics systems for urban planning and emergency response coordination.</p>
+                            </div>
+                        </div>
+
+                        <!-- Lightbox Container -->
+                        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                            <img id="lightbox-img" src="" alt="Fullsize Image">
+                        </div>
+
+                        <script>
+                            function openLightbox(imgSrc) {
+                                const lightbox = document.getElementById('lightbox');
+                                const lightboxImg = document.getElementById('lightbox-img');
+                                lightboxImg.src = imgSrc;
+                                lightbox.style.display = 'flex';
+                                document.body.style.overflow = 'hidden';
+                            }
+
+                            function closeLightbox() {
+                                const lightbox = document.getElementById('lightbox');
+                                lightbox.style.display = 'none';
+                                document.body.style.overflow = 'auto';
+                            }
+
+                            // Close lightbox with Escape key
+                            document.addEventListener('keydown', function(e) {
+                                if (e.key === 'Escape') {
+                                    closeLightbox();
+                                }
+                            });
+                        </script>
+
+                        <!-- Responsive Design -->
+                        <style>
+                            @media (max-width: 768px) {
+                                .experience-row {
+                                    flex-direction: column;
+                                }
+                                .experience-images, .experience-content {
+                                    width: 100%;
+                                }
+                                .experience-images {
+                                    padding: 16px 16px 0 16px;
+                                }
+                                .experience-content {
+                                    padding: 16px;
+                                }
+                            }
+                        </style>
+                    </div>
+                </div>
+            </section>
+
 			<section class="cta section">
 				<div class="container">
 					<div class="cta-inner section-inner">
